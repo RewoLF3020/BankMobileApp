@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "fa1208b3-8f9f-4207-95d4-976ef5fb776e"
+      }
+    },
+    "owner": "rewolf"
   }
 }
