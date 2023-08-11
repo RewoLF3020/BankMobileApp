@@ -21,11 +21,11 @@ const Navigation: FC = () => {
                 {user ? (
 					<>
 						<Stack.Screen name="Home" component={Home}></Stack.Screen>
-						<Stack.Screen name="Payments" component={Profile}></Stack.Screen>
+						<Stack.Screen name="Profile" component={Profile}></Stack.Screen>
 						<Stack.Screen name="Payments" component={Payments}></Stack.Screen>
-						<Stack.Screen name="Auth" component={Services}></Stack.Screen>
-						<Stack.Screen name="Auth" component={Support}></Stack.Screen>
-						<Stack.Screen name="Auth" component={More}></Stack.Screen>
+						<Stack.Screen name="Services" component={Services}></Stack.Screen>
+						<Stack.Screen name="Support" component={Support}></Stack.Screen>
+						<Stack.Screen name="More" component={More}></Stack.Screen>
 					</>
 				) : (
 						<Stack.Screen name="Auth" component={Auth}></Stack.Screen>
