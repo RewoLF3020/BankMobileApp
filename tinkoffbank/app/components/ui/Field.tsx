@@ -12,13 +12,13 @@ interface IField {
 const Field: FC<IField> = ({ onChange, placeholder, val, isSecure }) => {
     return (
 		<TextInput
-			showSoftInputOnFocus={false}
+			// showSoftInputOnFocus={false}
 			placeholder={placeholder}
 			onChangeText={onChange}
 			value={val}
 			secureTextEntry={isSecure}
 			autoCapitalize="none"
-			style={[tw`rounded-xl bg-gray-100 mt-3 pt-3 w-full`, { textAlignVertical: 'center', paddingLeft: 10, paddingBottom: 10 }]}
+			style={[tw`rounded-xl bg-gray-100 mt-3 pt-3 w-full pl-3 pb-3`, /* { textAlignVertical: 'center', paddingLeft: 10, paddingBottom: 10 } */]}
 		/>
 	)
 };

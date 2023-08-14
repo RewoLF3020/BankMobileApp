@@ -29,7 +29,7 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({children}) 
                 displayName: 'No name',
             })
         } catch (error: any) {
-            Alert.alert('Error reg:', error)
+            Alert.alert('Error reg:', error.message);
         } finally {
             setIsLoading(false);
         }
@@ -40,7 +40,7 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({children}) 
         try {
             await login(email, password);
         } catch (error: any) {
-            Alert.alert('Error login:', error)
+            Alert.alert('Error login:', error.message);
         } finally {
             setIsLoading(false);
         }
@@ -51,7 +51,7 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({children}) 
         try {
             await logout();
         } catch (error: any) {
-            Alert.alert('Error logout:', error)
+            Alert.alert('Error logout:', error.message);
         } finally {
             setIsLoading(false);
         }

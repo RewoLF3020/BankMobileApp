@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import React, { FC, useState } from "react";
 import tw from 'twrnc';
 import { styleCenter } from "../../layout/Layout";
@@ -13,12 +13,19 @@ interface IData {
 }
 
 const Auth: FC = () => {
-    const {isLoading} = useAuth();
+    const { isLoading, login, register } = useAuth();
 
     const [data, setData] = useState<IData>({} as IData)
     const [isReg, setIsReg] = useState(false);
 
-    const authHandler = () => {}
+    const authHandler = async () => {
+        const { email, password } = data;
+
+        if (isReg) await register(email, password);
+        else await login(email, password);
+
+        setData({} as IData);
+    }
 
     return (
         <View style={styleCenter}>
@@ -42,6 +49,11 @@ const Auth: FC = () => {
                             isSecure={true}
                         />
                         <Button onPress={authHandler} title={"Let's go"} />
+                        <Pressable onPress={() => setIsReg(!isReg)}>
+                            <Text style={tw`text-gray-800 opacity-30 text-right text-sm`}>
+                                {isReg ? 'Login' : 'Register'}
+                            </Text>
+                        </Pressable>
                     </>}
                 </View>
             </View>
