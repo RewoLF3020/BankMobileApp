@@ -21,6 +21,7 @@ import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
 	apiKey: "AIzaSyANNKPjtn7K6C5GwROCGE2L3WHXzWGylfk",
 	authDomain: "tinkoff-d72e9.firebaseapp.com",
+	databaseURL: "https://tinkoff-d72e9-default-rtdb.firebaseio.com",
 	projectId: "tinkoff-d72e9",
 	storageBucket: "tinkoff-d72e9.appspot.com",
 	messagingSenderId: "128563356961",
