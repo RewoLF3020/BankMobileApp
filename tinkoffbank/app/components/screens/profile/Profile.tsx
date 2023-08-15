@@ -1,4 +1,4 @@
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 import React, { FC } from "react";
 import { useProfile } from "./useProfile";
 import Layout from "../../layout/Layout";
@@ -8,18 +8,29 @@ import Loader from "../../ui/Loader";
 import Field from "../../ui/Field";
 import Button from "../../ui/Button";
 import { useAuth } from "../../../hooks/useAuth";
+import { useUpdateProfile } from "./useUpdateProfile";
+import tw from 'twrnc';
 
 const Profile: FC = () => {
     const {logout} = useAuth()
-    const {isLoading: isProfileLoading, name, setName} = useProfile();
+    const {isLoading: isProfileLoading, name, setName, profile} = useProfile();
+
+    const {isLoading, updateProfile, isSuccess} = useUpdateProfile(name, profile.docId);
 
     return (
         <Layout>
             <Heading text="Profile" isCenter={true} />
             <Padding>
-                {isProfileLoading ? <Loader /> : <>
+                {isSuccess && (
+                    <View style={tw`bg-green-500 p-3 py-2 rounded-lg`}>
+                        <Text style={tw`text-white text-center`}>
+                            Profile updated successfully
+                        </Text>
+                    </View>
+                )}
+                {(isProfileLoading || isLoading) ? <Loader /> : <>
                     <Field onChange={setName} val={name} placeholder="Enter name" />
-                    <Button onPress={() => {}} title="Update profile" />
+                    <Button onPress={updateProfile} title="Update profile" />
                     <Button onPress={logout} title="Logout" colors={['bg-gray-200', '#D6D8D8']} />
                 </>}
             </Padding>
