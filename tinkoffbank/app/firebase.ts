@@ -32,12 +32,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 
-export const auth = getAuth(app) //или предать туда app?
+export const auth = getAuth(app)
 
 export const register = (email: string, password: string) => createUserWithEmailAndPassword(auth, email, password);
 
 export const login = (email: string, password: string) => signInWithEmailAndPassword(auth, email, password);
 
-export const logout = () => signOut(auth)
+export const logout = () => signOut(auth);
 
-export const db = getFirestore(app) 
+export const db = getFirestore(app);
