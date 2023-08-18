@@ -1,4 +1,4 @@
-import { View, Text, ImageBackground, ImageSourcePropType } from "react-native";
+import { Text, ImageBackground, ImageSourcePropType } from "react-native";
 import React, { FC } from "react";
 import { IAccount } from "../types";
 import tw from "twrnc";
