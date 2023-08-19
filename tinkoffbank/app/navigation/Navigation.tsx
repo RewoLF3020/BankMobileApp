@@ -30,9 +30,7 @@ const Navigation: FC = () => {
 		const listener = ref.addListener('state', 
 		() => setName(ref.getCurrentRoute()?.name));
 		
-		return () => {
-			ref.removeListener('state', listener);
-		}
+		return () => ref.removeListener('state', listener);
 	}, [])
 
     return (
