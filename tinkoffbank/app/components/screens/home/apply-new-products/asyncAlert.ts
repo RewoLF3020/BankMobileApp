@@ -24,5 +24,5 @@ export const asyncAlert = ({title, msg, buttons}: IAsyncAlert) => new Promise(re
             text: buttons.textSecond,
             onPress: () => resolve(buttons.resolveValueSecond)
         },
-    ], {cancelable: false});
+    ], {cancelable: true});
 });

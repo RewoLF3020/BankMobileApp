@@ -13,7 +13,7 @@ import { db } from "../../../../firebase";
 export const useContacts = () => {
     const { user } = useAuth();
     const [contacts, setContacts] = useState<IContact[]>([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(
         () =>

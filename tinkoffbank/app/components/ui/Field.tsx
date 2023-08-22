@@ -2,7 +2,7 @@ import { TextInput } from "react-native";
 import React, { FC } from "react";
 import tw from "twrnc";
 
-interface IField {
+export interface IField {
     onChange: (val: string) => void;
     val: string;
     placeholder: string;
