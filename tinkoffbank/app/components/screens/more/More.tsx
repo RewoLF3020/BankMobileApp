@@ -1,11 +1,24 @@
-import { View, Text } from "react-native";
+import { Text } from "react-native";
 import React, { FC } from "react";
+import tw from "twrnc";
+import Layout from "../../layout/Layout";
+import Heading from "../../ui/Heading";
+import Padding from "../../ui/Padding";
+import Currencies from "./currencies/Currencies";
+import Menu from "./menu/Menu";
 
 const More: FC = () => {
     return (
-        <View>
-            <Text>More</Text>
-        </View>
+        <Layout>
+            <Heading text="More" />
+            <Padding>
+                <Currencies />
+                <Menu />
+                <Text style={tw`text-center text-gray-500 opacity-50 my-4`}>
+                    Version 5.20.6
+                </Text>
+            </Padding>
+        </Layout>
     );
 };
 

@@ -1,0 +1,1 @@
+export const URL = 'https://openexchangerates.org/api/latest.json?app_id=4d0a027fd03c4d3184254a029dfbdd42';
