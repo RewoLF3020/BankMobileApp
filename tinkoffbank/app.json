@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "tinkoffbank",
-    "slug": "tinkoffbank",
+    "name": "tinkoff",
+    "slug": "tinkoff",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,13 +15,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rewolf.tinkoff"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.rewolf.tinkoff"
     },
     "web": {
       "favicon": "./assets/favicon.png"
